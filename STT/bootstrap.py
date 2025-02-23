@@ -15,13 +15,14 @@ def create_and_setup_venv():
     if not (venv_dir / "Scripts").exists():
         print("Creating venv...")
         subprocess.check_call([sys.executable, "-m", "venv", "venv"])
+        sys.executable = venv_dir / "Scripts" / "python.exe"
     
     print("Checked the venv folder. Now installing requirements...")
     
     # venv의 Python 경로
-    python_executable = venv_dir / "bin" / "python"
+    python_executable = venv_dir / "Scripts" / "python.exe"
     # venv의 pip 경로
-    pip_executable = venv_dir / "bin" / "pip"
+    pip_executable = venv_dir / "Scripts" / "pip.exe"
     
     # pip 업데이트
     subprocess.check_call([str(python_executable), "-m", "pip", "install", "-U", "pip"])
@@ -41,7 +42,7 @@ def relaunch_in_venv():
     그렇지 않으면 venv의 파이썬으로 main.py를 재실행합니다.
     """
     base_dir = Path(__file__).resolve().parent
-    venv_python = base_dir / "venv" / "bin" / "python"
+    venv_python = base_dir / "venv" / "Scripts" / "python.exe"
     
     # 현재 실행 중인 파이썬 인터프리터가 venv의 python.exe가 아니라면 재실행
     if os.path.abspath(sys.executable) != os.path.abspath(str(venv_python)):
@@ -57,6 +58,6 @@ def bootstrap():
     base_dir = Path(__file__).resolve().parent
     venv_dir = base_dir / "venv"
 
-    #if not venv_dir.exists():
-    create_and_setup_venv()
+    if not venv_dir.exists():
+        create_and_setup_venv()
     relaunch_in_venv()

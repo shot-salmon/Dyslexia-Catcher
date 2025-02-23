@@ -32,18 +32,21 @@ const Practice = () => {
     }, 1000);
   };
 
-  //       const runPython = async () => {
-  //         try {
-  //           const response = await fetch('http://localhost:5001/run-python');
-  //           const data = await response.text()
-  //           console.log(data);
-  //         } catch (error) {
-  //           console.error('Error:', error);
-  //           alert('실행 중 에러 발생');
-  //         }
-  //       };
+  const runPython = (dur) => {
+    const params = new URLSearchParams({ duration: dur });
+    fetch(`http://localhost:5000/run-python?duration=${dur}`)
+      .then(response => response.text())
+      .then(data => {
+        console.log(data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Error occurred while executing');
+      });
+  };
 
   const handleStartPractice = () => {
+    runPython(30);
     setShowText(true);
     startTimer(30);
   };

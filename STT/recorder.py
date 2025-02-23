@@ -1,7 +1,10 @@
 import pyaudio
 import wave
 
+is_fin = False
+
 def record_audio(output_filename="./output.wav", record_seconds=60, sample_rate=44100, chunk=1024, channels=2):
+    global is_fin
     """
     Records audio from the default input device and saves it to a WAV file.
     
@@ -39,6 +42,8 @@ def record_audio(output_filename="./output.wav", record_seconds=60, sample_rate=
         data = stream.read(chunk)
         frames.append(data)
 
+    prevFrame = frames.copy()
+
     print("Recording finished!")
 
     stream.stop_stream()
@@ -50,7 +55,10 @@ def record_audio(output_filename="./output.wav", record_seconds=60, sample_rate=
         wf.setnchannels(channels)
         wf.setsampwidth(audio.get_sample_size(pyaudio.paInt16))
         wf.setframerate(sample_rate)
-        wf.writeframes(b''.join(frames))
+        wf.writeframes(b''.join(prevFrame))
 
-def record(path):
+def record_p(path):
     record_audio(output_filename=path)
+
+def record_pd(path, duration):
+    record_audio(output_filename=path, record_seconds=int(duration))

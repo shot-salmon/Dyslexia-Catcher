@@ -1,6 +1,7 @@
-import word_count
+from STS import word_count
 from transformers import AutoTokenizer, AutoModel
 
+sum_of_score = 0
 tokenizer = AutoTokenizer.from_pretrained('jhgan/ko-sroberta-multitask')
 model = AutoModel.from_pretrained('jhgan/ko-sroberta-multitask')
 
@@ -12,9 +13,11 @@ test = [' Once upon a time, there were three bears who lived together in a house
         ' and a middle-sized chair for the middle bear, and a great chair for the great huge bear.', \
         ' And they had...']
 
-result = word_count.slice_sentences(test)
-json_path = './FairlyTale.json'
-json_index = 0
-result = word_count.compare_word(result, json_path, json_index, tokenizer, model)
+def evaluation(result, key):
+        global sum_of_score
+        # result = word_count.slice_sentences(test)
+        json_path = '../STT/STS/FairlyTale.json'
+        json_index = key
+        sum_of_score += word_count.compare_word(result, json_path, json_index, tokenizer, model)
 
-print(round(result.item(), 2))
+        return round(sum_of_score.item(), 2)

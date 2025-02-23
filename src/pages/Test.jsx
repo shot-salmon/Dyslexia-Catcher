@@ -12,6 +12,22 @@ const Practice = () => {
   const [nextButtonVisible, setNextButtonVisible] = useState(false); // "Next" 버튼 표시 여부
   const [hideTimer, setHideTimer] = useState(false); // 타이머 숨김 여부
   const timerRef = useRef(null); // 타이머 상태 관리
+  const [result, setResult] = useState(null);
+
+  const runPython = (dur, keys, nums, trial) => {
+    const params = new URLSearchParams({ duration: dur, keys: keys, nums: nums, trial: trial });
+    fetch(`http://localhost:5000/eval-score?duration=${dur}&keys=${keys}&nums=${nums}&trial=${trial}`)
+      .then(response => response.text())
+      .then(data => {
+        console.log(data);
+        setResult(data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Error occurred while executing');
+      });
+
+  };
 
   // JSON 데이터 로드
   useEffect(() => {
@@ -44,6 +60,7 @@ const Practice = () => {
 
   // Start 버튼 클릭 시 실행
   const handleStart = () => {
+    runPython(10, currentIndex+1, 5, currentIndex);
     setShowText(true);
     startTimer();
   };
@@ -55,8 +72,9 @@ const Practice = () => {
 
   // "Next" 버튼 클릭 시 다음 문장 표시
   const handleNext = () => {
-    if (currentIndex < textList.length - 1) {
+    if (currentIndex < 4) {
       setCurrentIndex((prevIndex) => prevIndex + 1);
+      runPython(10, currentIndex+1, 5, currentIndex+1);
       setNextButtonVisible(false); // Next 버튼 숨김
       startTimer(); // 타이머 재시작
     } else {
@@ -84,11 +102,11 @@ const Practice = () => {
 
             {/* 진행률 표시 */}
             <div className="progress-indicator">
-              {currentIndex + 1} / {textList.length}
+              {currentIndex + 1} / {5}
             </div>
             {textList[currentIndex] && (
-              <p key={textList[currentIndex].id} style={{ color: "black", fontSize: "30spx"}}>
-                {textList[currentIndex].text}
+              <p key={textList[currentIndex+1].id} style={{ color: "black" }}>
+                {textList[currentIndex+1].text}
               </p>
             )}
 
