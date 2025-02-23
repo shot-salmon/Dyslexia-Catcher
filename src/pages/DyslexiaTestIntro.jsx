@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../App.css';
 import './pages.css';
 
 const DyslexiaTestIntro = () => {
   const navigate = useNavigate();
+  const [isRecording, setIsRecording] = useState(false);
+  const [audioURL, setAudioURL] = useState(null);
+  const [videoURL, setVideoURL] = useState(null);
+  const mediaRecorderRef = useRef(null);
+  const videoRef = useRef(null);
+  const streamRef = useRef(null);
 
   return (
     <div>

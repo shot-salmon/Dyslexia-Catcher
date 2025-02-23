@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
 import DyslexiaTestIntro from './pages/DyslexiaTestIntro.jsx';
 import DyslexiaExp from './pages/DyslexiaExp.jsx';
+import TestInstruction from "./pages/TestInstruction.jsx";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<DyslexiaTestIntro />} />
             <Route path="/explain" element={<DyslexiaExp/>} />
+            <Route path="/Test" element={<TestInstruction/>} />
           </Routes>
         </Router>
       </header>
