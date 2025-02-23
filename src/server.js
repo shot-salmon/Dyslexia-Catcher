@@ -4,7 +4,7 @@ const { spawn } = require('child_process');
 const path = require('path');
 
 const app = express();
-const port = 5000;
+const port = 5001;
 
 // CORS 처리를 위해 (개발환경에서는)
 app.use((req, res, next) => {

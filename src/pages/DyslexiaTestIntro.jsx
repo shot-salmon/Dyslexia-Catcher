@@ -22,7 +22,7 @@ const DyslexiaTestIntro = () => {
     setTimeout(() => {
       setScrambledText(originalText);
 
-    }, 3500);
+    }, 2500);
   }, []);
 
   useEffect(() => {

@@ -4,7 +4,8 @@ import './App.css';
 import DyslexiaTestIntro from "./pages/DyslexiaTestIntro.jsx";
 import DyslexiaExp from "./pages/DyslexiaExp.jsx";
 import TestInstruction from "./pages/TestInstruction.jsx";
-import Practice from "./pages/Practice.jsx"
+import Practice from "./pages/Practice.jsx";
+import Test from "./pages/Test.jsx";
 
 function App() {
   return (
@@ -18,8 +19,9 @@ function App() {
           <Routes>
             <Route path="/" element={<DyslexiaTestIntro />} />
             <Route path="/explain" element={<DyslexiaExp/>} />
-            <Route path="/Test" element={<TestInstruction/>} />
+            <Route path="/Test-Intro" element={<TestInstruction/>} />
             <Route path="/practice" element={<Practice/>} />
+            <Route path="/Test" element={<Test/>}/>
           </Routes>
         </Router>
       </header>

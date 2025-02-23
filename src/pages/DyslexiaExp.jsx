@@ -12,7 +12,7 @@ const DyslexiaExp = () => {
     if (!voiceConsent || !videoConsent) {
       alert("You must check the boxes to proceed with the test!");
     } else {
-      navigate("/test"); // Move to next
+      navigate("/Test-Intro"); // Move to next
     }
   };
 
