@@ -1,9 +1,10 @@
 // import logo from './logo.svg';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
-import DyslexiaTestIntro from './pages/DyslexiaTestIntro.jsx';
-import DyslexiaExp from './pages/DyslexiaExp.jsx';
+import DyslexiaTestIntro from "./pages/DyslexiaTestIntro.jsx";
+import DyslexiaExp from "./pages/DyslexiaExp.jsx";
 import TestInstruction from "./pages/TestInstruction.jsx";
+import practice from "./pages/practice.jsx"
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/" element={<DyslexiaTestIntro />} />
             <Route path="/explain" element={<DyslexiaExp/>} />
             <Route path="/Test" element={<TestInstruction/>} />
+            <Route path="/practice" element={<practice/>} />
           </Routes>
         </Router>
       </header>

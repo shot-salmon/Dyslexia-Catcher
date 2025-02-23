@@ -16,7 +16,7 @@ const TestInstructions = () => {
   const videoRef = useRef(null);
   const animationRef = useRef(null);
 
-  // 오디오 녹음 기능 + 실시간 볼륨 감지
+  // 오디오 녹음 기능
   const startRecordingAudio = async () => {
     try {
       setAudioURL(null);
@@ -85,11 +85,19 @@ const TestInstructions = () => {
   };
 
   const stopRecordingVideo = () => {
-    videoRecorderRef.current?.stop();
-    setIsVideoRecording(false);
+    if (videoRecorderRef.current) {
+      videoRecorderRef.current.stop();
+    }
+
     if (streamRef.current) {
       streamRef.current.getTracks().forEach((track) => track.stop());
     }
+
+    if (videoRef.current) {
+      videoRef.current.srcObject = null; //
+    }
+
+    setIsVideoRecording(false);
   };
 
   return (
@@ -109,13 +117,16 @@ const TestInstructions = () => {
           to analyze your reading patterns.
         </p>
         <div className="button-container">
-                <button className="backButton" onClick={() => navigate(-1)}>
-                    Back
-                </button>
-                <button className="proceedButton" onClick={() => navigate('/practice')}>
-                    Proceed to Test
-                </button>
-            </div>
+          <button className="backButton" onClick={() => navigate(-1)}>
+            Back
+          </button>
+          <button
+            className="proceedButton"
+            onClick={() => navigate("/practice")}
+          >
+            Proceed to Test
+          </button>
+        </div>
       </div>
 
       {/* 우측: 녹화 테스트 UI */}
@@ -123,7 +134,7 @@ const TestInstructions = () => {
         <h2>Recoding Test</h2>
         {/* 마이크 테스트 */}
         <div className="recording-section">
-          <h3 style={{color: "black"}}>🎤 Test Your Microphone</h3>
+          <h3 style={{ color: "black" }}>🎤 Test Your Microphone</h3>
           <button
             onClick={isRecording ? stopRecordingAudio : startRecordingAudio}
             className="startButton"
@@ -140,7 +151,7 @@ const TestInstructions = () => {
 
         {/* 🎥 카메라 테스트 */}
         <div className="recording-section">
-          <h3 style={{color: "black"}}>📹 Test Your Camera</h3>
+          <h3 style={{ color: "black" }}>📹 Test Your Camera</h3>
           <button
             onClick={
               isVideoRecording ? stopRecordingVideo : startRecordingVideo
