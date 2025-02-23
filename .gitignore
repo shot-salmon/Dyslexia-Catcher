@@ -82,6 +82,7 @@ web_modules/
 # python package
 __pycache__/
 venv/
+test.py
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
