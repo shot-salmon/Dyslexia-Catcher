@@ -1,0 +1,106 @@
+.startButton {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 120px;
+    height: 50px;
+    line-height: normal;
+    overflow: visible;
+    white-space: nowrap;
+    text-align: center;
+  }
+  
+  .startButton:hover {
+    background-color: #0056b3;
+  }
+  
+  .startButton:active {
+    background-color: #00408a;
+  }
+
+.Exp-box {
+    text-align: start;
+    padding-left: 100px;
+    padding-right: 250px;     
+}
+
+.dyslexia-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    text-align: left;
+}
+
+.title {
+    text-align: start;
+    padding-left: 20px;
+    font-size: 28px;
+    color: #ffffff;
+}
+
+.exp-box {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.exp-box p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.highlight {
+    color: #DB4455;
+    font-weight: bold;
+}
+
+.did-you-know {
+    margin-top: 20px;
+    padding: 15px;
+    background: #eef4ff;
+    border-left: 5px solid #007bff;
+    border-radius: 5px;
+}
+
+.did-you-know h2 {
+    font-size: 20px;
+    color: #007bff;
+}
+
+.did-you-know ul {
+    padding-left: 20px;
+}
+
+.did-you-know li {
+    color: #000000;
+}
+
+.learn-more-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.learn-more-button:hover {
+    background-color: #0056b3;
+}

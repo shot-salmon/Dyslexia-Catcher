@@ -1,14 +1,23 @@
 // import logo from './logo.svg';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
+import DyslexiaTestIntro from './pages/DyslexiaTestIntro.jsx';
+import DyslexiaExp from './pages/DyslexiaExp.jsx';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Welcome the HopperHack <br/> Dyslexia Test!</h1>
+        {/* <h1>Welcome the HopperHack <br/> Dyslexia Test!</h1>
         <p>Have you ever felt strangely <span style={{ color: "#DB4455"}}>confused</span> while reading? <br/>Dyslexia you never knew about check it in just 10 minute!</p>
         <br/>
-        <button className="startButton" onClick={() => alert("!")}>Start!</button>
+        <button className="startButton" onClick={() => alert("!")}>Start!</button> */}
+        <Router>
+          <Routes>
+            <Route path="/" element={<DyslexiaTestIntro />} />
+            <Route path="/explain" element={<DyslexiaExp/>} />
+          </Routes>
+        </Router>
       </header>
     </div>
   );
