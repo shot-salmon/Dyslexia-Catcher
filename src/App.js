@@ -4,7 +4,7 @@ import './App.css';
 import DyslexiaTestIntro from "./pages/DyslexiaTestIntro.jsx";
 import DyslexiaExp from "./pages/DyslexiaExp.jsx";
 import TestInstruction from "./pages/TestInstruction.jsx";
-import practice from "./pages/practice.jsx"
+import Practice from "./pages/Practice.jsx"
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
             <Route path="/" element={<DyslexiaTestIntro />} />
             <Route path="/explain" element={<DyslexiaExp/>} />
             <Route path="/Test" element={<TestInstruction/>} />
-            <Route path="/practice" element={<practice/>} />
+            <Route path="/practice" element={<Practice/>} />
           </Routes>
         </Router>
       </header>
