@@ -61,7 +61,7 @@ const Practice = () => {
       startTimer(); // 타이머 재시작
     } else {
       alert("End of story");
-      navigate("/loading"); // 마지막이면 다른 페이지로 이동 or 종료 메시지
+      navigate("/Loading"); // 마지막이면 다른 페이지로 이동 or 종료 메시지
     }
   };
 

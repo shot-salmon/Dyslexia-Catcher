@@ -449,3 +449,147 @@
   border-radius: 8px;
 }
 
+/* loading page */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  /* background-color: #f8f9fa; */
+  text-align: center;
+}
+
+.loading-container h2 {
+  font-size: 24px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.loading-container p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* 로딩 애니메이션 */
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(0, 0, 0, 0.1);
+  border-top-color: #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* results */
+.result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+
+.result-container h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.result-details p {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #444;
+}
+
+.diagnosis {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.normal {
+  color: green;
+}
+
+.moderate {
+  color: orange;
+}
+
+.severe {
+  color: red;
+}
+
+.restartButton {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.restartButton:hover {
+  background-color: #0056b3;
+}
+
+.extra-info {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.expand-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.expand-button:hover {
+  background-color: #0056b3;
+}
+
+.tips-container {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: left;
+  max-width: 500px;
+  margin: 10px;
+}
+
+.tips-container h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.tips-container ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.tips-container li {
+  font-size: 16px;
+  margin: 10px;
+  color: #333;
+}

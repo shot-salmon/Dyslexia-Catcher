@@ -150,7 +150,7 @@ const TestInstructions = () => {
             )}
           </div>
 
-          {/* 🎥 카메라 테스트 */}
+          {/* 카메라 테스트 */}
           <div className="recording-section">
             <h3 style={{ color: "black" }}>📹 Test Your Camera</h3>
             <button

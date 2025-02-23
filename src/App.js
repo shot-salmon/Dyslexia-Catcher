@@ -6,6 +6,8 @@ import DyslexiaExp from "./pages/DyslexiaExp.jsx";
 import TestInstruction from "./pages/TestInstruction.jsx";
 import Practice from "./pages/Practice.jsx";
 import Test from "./pages/Test.jsx";
+import Loading from "./pages/Loading.jsx";
+import Result from "./pages/Result.jsx";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
             <Route path="/Test-Intro" element={<TestInstruction/>} />
             <Route path="/practice" element={<Practice/>} />
             <Route path="/Test" element={<Test/>}/>
+            <Route path="/Loading" element={<Loading/>} />
+            <Route path="/Result" element={<Result/>} />
           </Routes>
         </Router>
       </header>
