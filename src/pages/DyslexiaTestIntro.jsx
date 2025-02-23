@@ -5,11 +5,11 @@ import "./pages.css";
 
 const DyslexiaTestIntro = () => {
   const navigate = useNavigate();
-  const [scrambledText, setScrambledText] = useState("Welcome to HopperHack Dyslexia Test!");
+  const [scrambledText, setScrambledText] = useState("Readability");
   const [mousePos, setMousePos] = useState({ x: 0, y: 0});
 
   useEffect(() => {
-    const originalText = "Welcome to HopperHack Dyslexia Test!";
+    const originalText = "Readability";
     let scrambled = originalText
       .split("")
       .map(value => ({ value, sort: Math.random() })) // 객체 형태로 정렬
@@ -46,9 +46,10 @@ const DyslexiaTestIntro = () => {
       <span className="blurred-text moving-text" style={{ left: `${80 + mousePos.x * 0.02}%`, top: `${20 + mousePos.y * 0.02}%` }}>confusion</span>
 
       <div>
-        <h1 className="scrambled-text">
+        <h3 className="scrambled-text">
           {scrambledText}
-        </h1>
+        </h3>
+        <p>Welcome to HopperHack Dyslexia Test!</p>
         <p>
           Have you ever felt strangely{" "}
           <span className="shake-text" style={{ color: "#DB4455" }}>

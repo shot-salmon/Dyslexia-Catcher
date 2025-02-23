@@ -33,7 +33,11 @@ const Result = () => {
   }
 
   return (
+    <div className="background">
     <div className="result-container">
+        <div className="headerOf">
+        <h1>Readability</h1>
+      </div>
       <h2 style={{color: "white"}}>📝 Dyslexia Analysis Result</h2>
 
       {resultData ? (
@@ -112,6 +116,7 @@ const Result = () => {
       <button className="restartButton" onClick={() => navigate("/")}>
         Restart Test
       </button>
+    </div>
     </div>
   );
 };

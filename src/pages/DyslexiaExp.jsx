@@ -18,6 +18,9 @@ const DyslexiaExp = () => {
 
   return (
     <div className="background">
+      <div className="w-full flex justify-start">
+        <h1 className="text-2xl font-bold">Readability</h1>
+      </div>
       <div className="dyslexia-container">
         <h1 className="title">What is Dyslexia?</h1>
 

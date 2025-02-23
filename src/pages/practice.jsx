@@ -63,6 +63,9 @@ const Practice = () => {
 
   return (
     <div className="background">
+      <div className="headerOf">
+        <h1>Readability</h1>
+      </div>
       <div className="practice-container">
         {!showText ? (
           <div>
@@ -78,7 +81,7 @@ const Practice = () => {
           </div>
         ) : (
           <div className="text-display">
-            <p style={{ color: "black" }}>{practiceText}</p>
+            <p style={{ color: "black", fontSize: "38px"}}>{practiceText}</p>
 
             {!hideTimer && (
               <div className="timer">⏳ Time Left: {recordTime}s</div>

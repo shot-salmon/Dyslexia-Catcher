@@ -102,6 +102,9 @@ const TestInstructions = () => {
 
   return (
     <div className="background">
+      <div className="w-full flex justify-start">
+        <h1 className="text-2xl font-bold">Readability</h1>
+      </div>
       <div className="test-container">
         {/* 좌측: 설명 텍스트 */}
         <div className="test-description">

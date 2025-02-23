@@ -67,6 +67,9 @@ const Practice = () => {
 
   return (
     <div className="background">
+      <div className="headerOf">
+        <h1>Readability</h1>
+      </div>
       <div className="practice-container">
         {!showText ? (
           <div>
@@ -84,7 +87,7 @@ const Practice = () => {
               {currentIndex + 1} / {textList.length}
             </div>
             {textList[currentIndex] && (
-              <p key={textList[currentIndex].id} style={{ color: "black" }}>
+              <p key={textList[currentIndex].id} style={{ color: "black", fontSize: "30spx"}}>
                 {textList[currentIndex].text}
               </p>
             )}
